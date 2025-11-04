@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satyaa - Video Editor & Visual Storyteller</title>
+    <title>Satyaa - Professional Video Editor & Visual Storyteller | India</title>
+    <meta name="description" content="Professional video editor specializing in reels, shorts, and full-length videos. Expert in After Effects, Alight Motion, and CapCut. Transform your ideas into compelling visual stories.">
+    <meta name="keywords" content="video editor, visual storyteller, video editing, motion graphics, color grading, After Effects, Alight Motion, CapCut, India">
+    <meta name="author" content="Satyaa">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Satyaa - Professional Video Editor & Visual Storyteller">
+    <meta property="og:description" content="Transform your ideas into compelling visual narratives through expert video editing, color grading, and motion graphics.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/satya.png">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
 
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navigation -->
     <header>
         <div class="container nav-container">
-            <a href="#" class="logo">Satyaa<span>.</span></a>
+            <a href="#" class="logo">SatyNox<span>.</span></a>
             <div class="menu-btn">
                 <div class="bars bar1"></div>
                 <div class="bars bar2"></div>
@@ -47,69 +61,50 @@
     <section class="work" id="work">
         <div class="container">
             <h2 class="section-title">My Works</h2>
-            <div class="work-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="commercial">Commercial</button>
-                <button class="filter-btn" data-filter="music">Music Videos</button>
-                <button class="filter-btn" data-filter="corporate">Corporate</button>
-                <button class="filter-btn" data-filter="short-film">Short Films</button>
+            <p>A collection of my edited reels, shorts, and full-length videos for brands and creators.</p>
+            <div class="video-cont">
+
+                <div class="left"><i class="fa-solid fa-arrow-left"></i></div>
+
+               <div class="video-container">
+
+                <div class="video">
+                    <video src="videos/first video.mp4" alt="first video" autoplay muted loop controls loading="lazy"></video>
+                </div>
+
+                <div class="video">
+                    <video muted controls loading="lazy" src="videos/second.mp4" alt="second video"></video>
+                </div>
+
+                <div class="video">
+                    <video muted controls loading="lazy" src="videos/third.mp4" alt="third video"></video>
+                </div>
+
+                <div class="video">
+                    <video muted controls loading="lazy" src="videos/fourth.mp4" alt="fourth video"></video>
+                </div>
+
+                <div class="video">
+                    <video muted controls loading="lazy" src="videos/fifth.mp4" alt="fifth video"></video>
+                </div>
+
+                
             </div>
-            <div class="work-grid">
-                <!-- Project 1 -->
-                <div class="work-item" data-category="commercial">
-                    <video src="videos/first video.mp4" alt="Commercial Project" autoplay muted loop controls loading="lazy" ></video>
-                    <div class="work-overlay">
-                        <h3>Brand Campaign 2023</h3>
-                        <p>Commercial</p>
-                        <a href="#" class="btn btn-outline">View Project</a>
-                    </div>
+
+                <div class="right"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="second-video">
+                    <div class="video">
+                    <video muted controls loading="lazy"  src="videos/satnox video 6.mp4" alt="six video"></video>
                 </div>
-                <!-- Project 2 -->
-                <div class="work-item" data-category="music">
-                    <video  muted controls loading="lazy" src="videos/second.mp4" alt="Music Video"></video>
-                    <div class="work-overlay">
-                        <h3>Rhythm of the Night</h3>
-                        <p>Music Video</p>
-                        <a href="#" class="btn btn-outline">View Project</a>
-                    </div>
+
+                <div  class="video">
+                    <video muted controls loading="lazy" src="videos/satynox video 7.mp4" alt="seventh video"></video>
                 </div>
-                <!-- Project 3 -->
-                <div class="work-item" data-category="corporate">
-                    <video  muted controls loading="lazy" src="videos/third.mp4" alt="Corporate Video"></video>
-                    <div class="work-overlay">
-                        <h3>Tech Innovation Summit</h3>
-                        <p>Corporate</p>
-                        <a href="#" class="btn btn-outline">View Project</a>
-                    </div>
-                </div>
-                <!-- Project 4 -->
-                <div class="work-item" data-category="short-film">
-                    <video muted controls loading="lazy" src="videos/fourth.mp4" alt="Short Film"></video>
-                    <div class="work-overlay">
-                        <h3>Echoes of Time</h3>
-                        <p>Short Film</p>
-                        <a href="#" class="btn btn-outline">View Project</a>
-                    </div>
-                </div>
-                <!-- Project 5 -->
-                <div class="work-item" data-category="commercial">
-                    <video muted controls loading="lazy" src="videos/fifth.mp4" alt="Commercial Project"></video>
-                    <div class="work-overlay">
-                        <h3>Product Launch 2023</h3>
-                        <p>Commercial</p>
-                        <a href="#" class="btn btn-outline">View Project</a>
-                    </div>
-                </div>
-                <!-- Project 6 -->
-                <div class="work-item" data-category="music">
-                    <video muted controls loading="lazy" src="videos/second.mp4" alt="Music Video">
-                    <div class="work-overlay">
-                        <h3>Urban Beats</h3>
-                        <p>Music Video</p>
-                        <a href="#" class="btn btn-outline">View Project</a>
-                    </div>
+
                 </div>
             </div>
+            
         </div>
     </section>
 
@@ -123,7 +118,7 @@
                 </div>
                 <div class="about-text">
                     <h2>Crafting Emotion Through Edit</h2>
-                    <p>With over 5 years of experience in video editing and post-production, I specialize in transforming raw footage into compelling visual stories that captivate audiences and deliver results.</p>
+                    <p>With over 3 years of experience in video editing and post-production, I specialize in transforming raw footage into compelling visual stories that captivate audiences and deliver results.</p>
                     <p>My approach combines technical expertise with creative vision, ensuring every project maintains its unique voice while achieving the highest production standards.</p>
                     
                     <div class="skills">
@@ -197,7 +192,7 @@
                         </div>
                         <div class="contact-detail">
                             <i class="fas fa-phone"></i>
-                            <span>+91 4545454545</span>
+                            <span>+91 9302089806</span>
                         </div>
                         <div class="contact-detail">
                             <i class="fas fa-map-marker-alt"></i>
@@ -206,28 +201,26 @@
                     </div>
                     
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-vimeo-v"></i></a>
+                        <a href="https://discord.com/users/1388361466842972182"><i class="fa-brands fa-discord"></i></a>
                         <a href="https://youtube.com/@satynox?si=5KcgDEYnIxLqV-Du"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/satynoxx?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/9302089806"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
                 
-                <form class="contact-form">
+                <form id="contact-form" class="contact-form">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject">
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
                     </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Subject">
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+                    <button type="submit" class="btn">Open Email App</button>
+            </form>
             </div>
         </div>
     </section>
@@ -249,7 +242,6 @@
             </div>
         </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>

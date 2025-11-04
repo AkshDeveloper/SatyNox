@@ -71,24 +71,48 @@
             });
         });
 
+        // Video slider
+            const videoItems = document.querySelectorAll('.video');
+            const leftArrow = document.querySelector('.left');
+            const rightArrow = document.querySelector('.right');
+            const secondVideo = document.querySelector('.second-video');
+            
+            let currentVideoIndex = 0;
+            const totalVideos = videoItems.length;
+           
+            leftArrow.addEventListener('click', () => {
+                currentVideoIndex = (currentVideoIndex - 1 + totalVideos) % totalVideos;
+                updateVideoSlider();
+                secondVideo.classList.add("left-right");
+            });
+            
+            rightArrow.addEventListener('click', () => {
+                currentVideoIndex = (currentVideoIndex + 1) % totalVideos;
+                updateVideoSlider();
+                secondVideo.classList.add("left-right");
+            });
+            
+            function updateVideoSlider() {
+                videoItems.forEach((video, index) => {
+                    video.style.display = index === currentVideoIndex ? 'block' : 'none';
+                });
+            }
+         
 
-const videos = document.querySelectorAll('.work-grid video');
+
+const videos = document.querySelectorAll('.video-container video');
 
 videos.forEach(video => {
      const observer = new IntersectionObserver((entries) => {
      const entry = entries[0]; 
-     const isMobile = window.matchMedia("(max-width: 500px)").matches;
 
-        if (entry.isIntersecting || isMobile) {
-            entry.target.classList.add('videoScroll');
+        if (entry.isIntersecting) {
             entry.target.play();
             
         } else {
-            entry.target.classList.remove('videoScroll');
             entry.target.pause();
         }
     }, {
-        threshold: 0.5,
         
     }
     
@@ -118,3 +142,54 @@ const skillPro = document.querySelectorAll(".skill-progress");
    skillRun.observe(skill);
 
 });
+
+
+const form = document.getElementById('contact-form');
+  const recipient = 'akshaykumaraditya01@gmail.com';
+
+  function encodeMailParam(text) {
+    return encodeURIComponent(text).replace(/%0A/g, '%0D%0A');
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const subjectRaw = document.getElementById('subject').value.trim();
+    const messageRaw = document.getElementById('message').value.trim();
+
+    const subject = subjectRaw || 'Portfolio Contact';
+    const bodyPlain =
+`Name: ${name}
+${messageRaw}
+
+---
+Sent from portfolio contact form`;
+
+    // build mailto link
+    const mailto = `mailto:${recipient}?subject=${encodeMailParam(subject)}&body=${encodeMailParam(bodyPlain)}`;
+
+    try {
+      window.location.href = mailto;
+
+      setTimeout(async () => {
+        const confirmFallback = confirm("If your mail didn't open, click OK to copy the message to clipboard so you can paste it into your email manually.");
+        if (confirmFallback) {
+          try {
+            await navigator.clipboard.writeText(bodyPlain);
+            alert("Message copied to clipboard. Now open your email, compose a new email to " + recipient + " and paste.");
+          } catch (err) {
+            alert("Couldn't copy to clipboard. Please manually copy the message:\n\n" + bodyPlain);
+          }
+        }
+      }, 800);
+    } catch (err) {
+      // fallback if window.location.href fails
+      try {
+        await navigator.clipboard.writeText(bodyPlain);
+        alert("Couldn't open mail. The message has been copied to clipboard — please paste it into an email addressed to " + recipient);
+      } catch (err2) {
+        alert("Couldn't open mail and couldn't copy to clipboard. Please manually email to " + recipient + " with this message:\n\n" + bodyPlain);
+      }
+    }
+  });
